@@ -3,7 +3,7 @@ let user = {
   surname: 'Smith'
 };
 
-user.name = 'Pete';
+Object.assign(user, { name: 'Pete' });
 delete user.name;
 
 function isEmpty(obj) {
@@ -12,7 +12,7 @@ function isEmpty(obj) {
 
 let schedule = {};
 console.log(isEmpty(schedule));
-schedule["8:30"] = "get up";
+Object.assign(schedule, { "8:30": "get up" });
 console.log(isEmpty(schedule));
 
 let salaries = {
@@ -22,6 +22,8 @@ let salaries = {
 }
 
 let sum = Object.values(salaries).reduce((acc, value) => acc + value, 0);
+const average = calculateAverage(salaries);
+console.log(average);
 
 function multiplyNumeric(obj) {
   for (let key in obj) if (typeof obj[key] === 'number') obj[key] *= 2;
@@ -54,3 +56,19 @@ let ladder = {
 };
 
 ladder.up().up().down().showStep().down().showStep();
+
+// Merge two objects
+function mergeObjects(obj1, obj2) {
+  return { ...obj1, ...obj2 };
+}
+
+// Calculate the average of an object's values
+function calculateAverage(obj) {
+  const sum = Object.values(obj).reduce((acc, value) => acc + value, 0);
+  return sum / Object.keys(obj).length;
+}
+
+const obj1 = { a: 1, b: 2 };
+const obj2 = { c: 3, d: 4 };
+const mergedObj = mergeObjects(obj1, obj2);
+console.log(mergedObj);
