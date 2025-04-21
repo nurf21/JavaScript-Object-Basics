@@ -1,10 +1,14 @@
-let user = {};
-user.name = 'John';
-user.surname = 'Smith';
+let user = {
+  name: 'John',
+  surname: 'Smith'
+};
+
 user.name = 'Pete';
 delete user.name;
 
-function isEmpty(obj) { return Object.keys(obj).length === 0; }
+function isEmpty(obj) {
+  return Object.keys(obj).length === 0;
+}
 
 let schedule = {};
 console.log(isEmpty(schedule)); // true
@@ -17,8 +21,7 @@ let salaries = {
   Pete: 130
 }
 
-let sum = 0;
-for (let key in salaries) sum += salaries[key];
+let sum = Object.values(salaries).reduce((acc, value) => acc + value, 0);
 
 function multiplyNumeric(obj) {
   for (let key in obj) if (typeof obj[key] === 'number') obj[key] *= 2;
@@ -31,3 +34,5 @@ let menu = {
 };
 
 multiplyNumeric(menu);
+
+console.log(menu);
