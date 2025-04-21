@@ -15,6 +15,12 @@ console.log(isEmpty(schedule));
 Object.assign(schedule, { "8:30": "get up" });
 console.log(isEmpty(schedule));
 
+// Calculate the average of an object's values
+function calculateAverage(obj) {
+  const sum = Object.values(obj).reduce((acc, value) => acc + value, 0);
+  return sum / Object.keys(obj).length;
+}
+
 let salaries = {
   John: 100,
   Ann: 160,
@@ -60,12 +66,6 @@ ladder.up().up().down().showStep().down().showStep();
 // Merge two objects
 function mergeObjects(obj1, obj2) {
   return { ...obj1, ...obj2 };
-}
-
-// Calculate the average of an object's values
-function calculateAverage(obj) {
-  const sum = Object.values(obj).reduce((acc, value) => acc + value, 0);
-  return sum / Object.keys(obj).length;
 }
 
 const obj1 = { a: 1, b: 2 };
