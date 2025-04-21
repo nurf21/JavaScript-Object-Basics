@@ -1,21 +1,29 @@
-let calculator = {
-  a: 0,
-  b: 0,
-  
-  read() {
-      this.a = Number(document.getElementById('numA').value);
-      this.b = Number(document.getElementById('numB').value);
+const calculator = {
+  numA: null,
+  numB: null,
+  read: function() {
+    this.numA = parseFloat(document.getElementById('numA').value);
+    this.numB = parseFloat(document.getElementById('numB').value);
   },
-  
-  sum() {
-      return this.a + this.b;
+  sum: function() {
+    return this.numA + this.numB;
   },
-  
-  mul() {
-      return this.a * this.b;
+  mul: function() {
+    return this.numA * this.numB;
   }
 };
 
-function showResult(value) {
-  document.getElementById('result').textContent = `Result: ${value}`;
-}
+const readBtn = document.getElementById('read-btn');
+const sumBtn = document.getElementById('sum-btn');
+const mulBtn = document.getElementById('mul-btn');
+const resultDiv = document.getElementById('result');
+
+readBtn.addEventListener('click', calculator.read);
+sumBtn.addEventListener('click', () => {
+  calculator.read();
+  resultDiv.innerText = `Sum: ${calculator.sum()}`;
+});
+mulBtn.addEventListener('click', () => {
+  calculator.read();
+  resultDiv.innerText = `Multiply: ${calculator.mul()}`;
+});
