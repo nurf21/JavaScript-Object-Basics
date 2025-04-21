@@ -11,9 +11,9 @@ function isEmpty(obj) {
 }
 
 let schedule = {};
-console.log(isEmpty(schedule)); // true
+console.log(isEmpty(schedule));
 schedule["8:30"] = "get up";
-console.log(isEmpty(schedule)); // false
+console.log(isEmpty(schedule));
 
 let salaries = {
   John: 100,
@@ -36,3 +36,21 @@ let menu = {
 multiplyNumeric(menu);
 
 console.log(menu);
+
+let ladder = {
+  step: 0,
+  up() {
+    this.step++;
+    return this;
+  },
+  down() {
+    this.step--;
+    return this;
+  },
+  showStep() {
+    console.log(this.step);
+    return this;
+  }
+};
+
+ladder.up().up().down().showStep().down().showStep();
