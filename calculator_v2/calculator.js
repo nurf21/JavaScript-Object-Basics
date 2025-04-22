@@ -1,5 +1,5 @@
 function Calculator() {
-  this.read = function() {
+  this.read = function () {
     this.a = Number(document.getElementById('num1').value);
     this.b = Number(document.getElementById('num2').value);
     if (isNaN(this.a) || isNaN(this.b)) {
@@ -7,12 +7,15 @@ function Calculator() {
     }
   };
 
-  this.sum = function() {
-    return this.a + this.b;
-  };
-
-  this.mul = function() {
-    return this.a * this.b;
+  this.calculate = function (operation) {
+    switch (operation) {
+      case 'sum':
+        return this.a + this.b;
+      case 'mul':
+        return this.a * this.b;
+      default:
+        throw new Error('Unsupported operation');
+    }
   };
 }
 
@@ -22,7 +25,7 @@ function showResult(operation) {
   const resultElement = document.getElementById('result');
   calculator.read();
   try {
-    const result = operation === 'sum' ? calculator.sum() : calculator.mul();
+    const result = calculator.calculate(operation);
     resultElement.textContent = `Result: ${result}`;
     resultElement.style.color = '#333';
   } catch (error) {
