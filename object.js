@@ -75,7 +75,7 @@ console.log(mergedObj);
 
 let sharedObject = {}; // Common object stored externally
 
-function A() { 
+function A() {
   return sharedObject; // Returns the shared object instead of new instance
 }
 
