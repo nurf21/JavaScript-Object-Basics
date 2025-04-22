@@ -1,11 +1,11 @@
 const calculator = {
   numA: null,
   numB: null,
-  read: function() {
+  read: function () {
     this.numA = parseFloat(document.getElementById('numA').value);
     this.numB = parseFloat(document.getElementById('numB').value);
   },
-  calculate: function(operation) {
+  calculate: function (operation) {
     switch (operation) {
       case 'sum':
         return this.numA + this.numB;
