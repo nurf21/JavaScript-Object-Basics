@@ -72,3 +72,18 @@ const obj1 = { a: 1, b: 2 };
 const obj2 = { c: 3, d: 4 };
 const mergedObj = mergeObjects(obj1, obj2);
 console.log(mergedObj);
+
+let sharedObject = {}; // Common object stored externally
+
+function A() { 
+  return sharedObject; // Returns the shared object instead of new instance
+}
+
+function B() {
+  return sharedObject; // Returns the same shared object
+}
+
+let a = new A();
+let b = new B();
+
+console.log(a == b); // true (both reference the same object)
