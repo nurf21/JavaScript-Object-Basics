@@ -5,6 +5,7 @@
   border: 1px solid #ddd;
   border-radius: 8px;
   font-family: Arial, sans-serif;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 input {
@@ -12,6 +13,13 @@ input {
   padding: 8px;
   margin: 8px 0;
   box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+input:focus {
+  border-color: #aaa;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 button {
@@ -22,10 +30,15 @@ button {
   border-radius: 4px;
   cursor: pointer;
   margin: 5px 0;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
   background-color: #45a049;
+}
+
+button:active {
+  background-color: #3e8e41;
 }
 
 #currentValue {
@@ -34,9 +47,11 @@ button:hover {
   background-color: #f8f8f8;
   border-radius: 4px;
   font-weight: bold;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .error {
   color: red;
   margin: 5px 0;
+  font-size: 14px;
 }
