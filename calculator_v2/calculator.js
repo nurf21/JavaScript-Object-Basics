@@ -1,10 +1,12 @@
 function Calculator() {
   this.read = function () {
-    this.a = Number(document.getElementById('num1').value);
-    this.b = Number(document.getElementById('num2').value);
-    if (isNaN(this.a) || isNaN(this.b)) {
+    const num1 = document.getElementById('num1').value;
+    const num2 = document.getElementById('num2').value;
+    if (isNaN(Number(num1)) || isNaN(Number(num2))) {
       throw new Error('Invalid input');
     }
+    this.a = Number(num1);
+    this.b = Number(num2);
   };
 
   this.calculate = function (operation) {

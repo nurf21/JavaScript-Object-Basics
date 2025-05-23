@@ -6,6 +6,9 @@
   border-radius: 5px;
   font-family: Arial, sans-serif;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .input-group {
@@ -22,6 +25,7 @@ input {
   box-sizing: border-box;
   border: 1px solid #ccc;
   border-radius: 4px;
+  font-size: 16px;
 }
 
 button {
@@ -33,6 +37,7 @@ button {
   cursor: pointer;
   margin: 5px 2px;
   transition: background-color 0.3s ease;
+  font-size: 16px;
 }
 
 button:hover {
@@ -49,4 +54,6 @@ button:active {
   background-color: #f0f0f0;
   border-radius: 4px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-size: 18px;
+  font-weight: bold;
 }
