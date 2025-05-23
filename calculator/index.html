@@ -10,18 +10,21 @@
 
 <body>
   <div class="calculator">
-    <label for="numA">Enter first number:</label>
-    <input type="number" id="numA" placeholder="Enter first number">
-    <br><br>
-    <label for="numB">Enter second number:</label>
-    <input type="number" id="numB" placeholder="Enter second number">
-    <br><br>
-    <div>
-      <button id="sum-btn">Sum</button>
-      <button id="mul-btn">Multiply</button>
-    </div>
-    <br>
-    <div id="result"></div>
+    <form>
+      <label for="numA">Enter first number:</label>
+      <input type="number" id="numA" placeholder="Enter first number" required>
+      <br><br>
+      <label for="numB">Enter second number:</label>
+      <input type="number" id="numB" placeholder="Enter second number" required>
+      <br><br>
+      <div>
+        <button id="sum-btn" type="button">Sum</button>
+        <button id="mul-btn" type="button">Multiply</button>
+        <button id="reset-btn" type="reset">Reset</button>
+      </div>
+      <br>
+      <div id="result"></div>
+    </form>
   </div>
 
   <script src="calculator.js"></script>
