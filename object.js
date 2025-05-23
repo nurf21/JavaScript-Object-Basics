@@ -17,6 +17,7 @@ console.log(isEmpty(schedule));
 
 // Calculate the average of an object's values
 function calculateAverage(obj) {
+  if (Object.keys(obj).length === 0) return 0;
   const sum = Object.values(obj).reduce((acc, value) => acc + value, 0);
   return sum / Object.keys(obj).length;
 }
@@ -33,6 +34,7 @@ console.log(average);
 
 function multiplyNumeric(obj) {
   for (let key in obj) if (typeof obj[key] === 'number') obj[key] *= 2;
+  return obj;
 }
 
 let menu = {
@@ -41,7 +43,7 @@ let menu = {
   title: "My menu"
 };
 
-multiplyNumeric(menu);
+menu = multiplyNumeric(menu);
 
 console.log(menu);
 
